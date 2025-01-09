@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Define ANSI color codes
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+MAGENTA='\033[0;35m'
+NC='\033[0m'  # No Color
+
+B1="${BLUE}[${NC}"
+B2="${BLUE}]${NC}"
+
+
+echo "\n\n 🚀 ${MAGENTA}Commit Format${NC}  |  ${YELLOW}\"[ type ]: [ subject ]\"${NC}\n"
+echo "\t- Types allowed: ${BLUE}feat fix merge-dev merge-qa merge-prod refactor revert${NC}"
+echo "\t- Subject rules: ${BLUE}lowercase, max 50 char, min 10 char${NC}\n"
+echo "\t✅ Example| ${GREEN}feat: create new commit${NC}\n\n"
+npx --no-install commitlint --edit --verbose

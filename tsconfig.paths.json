@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDirs": [
+      "./src/",
+      "./apps/",
+      "./tests/"
+    ],
+    "paths": {
+      "@shared/*": [
+        "./src/context/shared/*",
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@services/*": [
+        "./apps/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ],
+      "@middleware/*": [
+        "./src/utils/middlewares/*"
+      ],
+      "@tests/*": [
+        "./tests/*"
+      ]
+    }
+  }
+}
