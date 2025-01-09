@@ -14,55 +14,59 @@
 - [Levantar el proyecto](#run)
 - [Convenciones de Código](#codingConvenctions)
 
-
 # <a name="installation"></a>Instalación ⚙️
 
 ## Node 🟢
+
 ### Versión `>= 20.9.0`
 
 Puedes instalar node con Node Version Manager _NVM_ para poder tener un mejor control de las distintas versiones de Node que emplees en tus ptoyectos. [Sigue las intrucciones para instalar NVM](https://github.com/nvm-sh/nvm)
 
 Este proyecto usa la version de node `>=20.9.0`.
 Instalar node con nvm.
+
 ```bash
 nvm install node #node es el alias para la última versión
 ```
+
 Instalar una versión específica de node
+
 ```bash
 nvm install 20.9.0
 ```
-Usar una versión isntalada
+
+Usar una versión instalada
+
 ```bash
 nvm use 20.9.0
 ```
+
 Comprobar la versión de node instalada
+
 ```bash
 node --version
 ```
 
-## Yarn 📦
+## pnpm 📦
 
-Yarn es el gestor de paquetes utilizado. Dberás instalarlo de forma global.
+pnpm es el gestor de paquetes utilizado. Deberás instalarlo de forma global.
 
 ```bash
-npm install --global yarn
-```
-Comprobar la instalación de yarn
-```
-yarn --version
+npm install -g pnpm
 ```
 
-## Serverless Framework ⚡️
-### Versión `3.36.0`
+Comprobar la instalación de pnpm
 
-Serverless Framework es una plataforma y un conjunto de herramientas que facilitan el desarrollo, implementación y gestión de aplicaciones sin servidor. Es el framework que empleamos para poder desarrollar servicios de backend en la nube de AWS.
+```bash
+pnpm --version
+```
 
-Instalar Serverless Framework
 ```bash
 npm install -g serverless@3.36.0 #IMPORTANTE instalar la versión específica
 ```
 
 Comprobar instalación
+
 ```bash
 sls --version
 ```
@@ -74,6 +78,7 @@ Configuración inicial para el proyecto.
 ## ![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white) ES Lint
 
 ### Instalar plugin de ESLint de Visual Studio Code
+
 ESLint es nuestro formateador de código empleado para aplicar y mantener las convenciones de código del proyecto.
  [Puedes descargar el plugin aquí](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
@@ -91,10 +96,10 @@ Agregar esta configuración en Visual Studio Code config `settings.json`.
 
 ## ![Node Modules](https://img.shields.io/badge/-Node_Modules-43853D?style=flat-square&logo=node.js&logoColor=white) Instalar dependencias del proyecto
 
-
 En la raíz del proyecto ejecutar. Esto descargará las dependencias del proyecto en la carpeta `node_modules`
+
 ```bash
-yarn install
+pnpm install
 ```
 
 ## Husky 🐶
@@ -104,9 +109,8 @@ Husky es una herramienta que facilita la configuración y ejecución de ganchos 
 Para configurar husky hay que ejecutar el script desde la raiz
 
 ```bash
-yarn run prepare
+pnpm run prepare
 ```
-
 
 ## Variables de Entorno
 
@@ -123,7 +127,6 @@ VAR2=3390
 ```
 
 # <a name="architecture"></a>Arquitectura del Proyecto 🧠
-
 
 ```
 project-root
@@ -217,6 +220,7 @@ ln -s ../../package.json .
 ```bash
 ln -s ../../esbuild-plugins.ts .
 ```
+
 3. En el archivo `package.json` están definidos los scripts que se pueden ejecutar dentro del proyecto.
 
 ```json
@@ -239,39 +243,41 @@ Actualmente hay _cuatro scripts_.
 - `format` Inicializa el formateo de código acorde a las reglas establecidas en `.eslintrc.js`.
 - `format-quiet` Igual que `format` pero sin alertar de warnings.
 
-Para correr un script del `package.json` es necesario ejecutar el comando `yarn run [Nombre del script]`.
+Para correr un script del `package.json` es necesario ejecutar el comando `pnpm run [Nombre del script]`.
 
 Para correr el proyecto, una vez completados los requerientos anteriores deberás ejecutar
 
 ```bash
-yarn run start
+pnpm run start
 ```
 
 # <a name="debug"></a>Habilitar modo debug 🪲
 
 Para usar el modo debug, ya existe una configuración dentro del archivo `.vscode`. Al ejecutar el modo debug, Visual Studio Code te solicitará introducir el nombre del servicio que deseas correr.
 
-
 # <a name="codingConvenctions"></a>Convenciones de Código 👨‍💻
 
 ## Commits 💾
 
 - Los commit deberán seguir la siguiente estructura:
+
 ```
 [type]: [commit message]
 ```
+
 - Los `type` permitios son:
-   - `feat`
-   - `fix`
-   - `merge-dev`
-   - `merge-qa`
-   - `merge-prod`
-   - `refactor`
-   - `revert`
-   - `chore`
-   - `docs`
-- El `commit message` deberá estar en su totalidad en ___minusculas___ y con una ___longitud máxima de 50 caracteres___.
+  - `feat`
+  - `fix`
+  - `merge-dev`
+  - `merge-qa`
+  - `merge-prod`
+  - `refactor`
+  - `revert`
+  - `chore`
+  - `docs`
+- El `commit message` deberá estar en su totalidad en _**minusculas**_ y con una _**longitud máxima de 50 caracteres**_.
 - Ejemplo
+
 ```
 feat: store file in s3 usecase created
 ```
@@ -454,13 +460,6 @@ Si deseas establecer una regla escrita para la creación de prototipos de evento
    - Especifica qué acción o acciones deben llevarse a cabo cuando este evento se dispara.
    - Ejemplo: "Enviar notificación por correo electrónico cuando `EntityActionOccurred`".
 
-### Regla para la Creación de Manejadores de Eventos
-
-1. **Nombre del Manejador:**
-   - Utiliza un nombre claro y descriptivo que indique la acción específica que realiza el manejador.
-   - Ejemplo: `SendEmailNotificationOnEntityActionHandler`.
-
-
 ```
 Nunca es tarde para no hacer nada
 
@@ -469,8 +468,7 @@ Nunca es tarde para no hacer nada
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠋⠀⠀⡀⠐⡈⠄⠡⠈⠄⡁⠂⠄⡀⢀⠈⠠⠁⢂⠡⠀⠄⡀⠀⠀⠋⠟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠋⠁⠀⠀⡀⢀⠀⢀⠐⠠⢀⠡⠀⢂⠁⠌⠠⠐⢈⠠⢀⠂⠠⠀⠄⠂⠠⢈⠐⢀⠁⢂⠀⡀⠀⠙⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠁⠀⢀⠠⠐⠈⠄⡐⠠⠐⠠⢈⠐⠠⢀⠁⢂⠈⡐⠠⠁⢂⠀⠂⠄⠡⢈⠀⠂⠄⠠⠈⠠⢈⠠⠐⢀⠐⡀⠀⠂⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠁⠀⠀⠄⡈⠄⡐⠈⡐⠠⠐⢀⠁⢂⠀⠐⢀⠂⡈⠄⡐⠠⢀⠁⢂⠈⠐⢈⠠⠀⠌⠐⡈⠄⠈⢀⠂⠄⡈⢀⠂⠠⢁⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿
-⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠁⠂⠀⠂⠀⠁⠀⠐⠈⠀⠀⠂⠀⠀⠀⠐⠀⠐⠀⠐⠀⠈⠀⠀⠁⠀⠀⠀⠈⠐⠀⠀⠁⠀⠀⠂⠀⠀⠂⠁⠀⠈⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⠿⠁⠀⠀⠄⡈⠄⡐⠈⡐⠠⠐⢀⠁⢂⠀⠐⢀⠂⡈⠄⡐⠠⢀⠁⢂⠈⠐⢈⠠⠀⠌⠐⡈⠄⠈⢀⠂⠄⡈⢀⠂⠠⢁⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⡀⠀⠄⠠⠀⠀⠄⡀⠀⠠⠀⠄⡀⢀⠀⠀⠄⠰⣄⠀⠀⠄⡀⠀⡀⠀⢀⠀⠄⡀⠠⠀⠀⠀⠀⠠⠀⠀⠀⡀⠄⠀⡀⠠⢀⠠⠀⡀⠀⣹⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⠫⠀⢀⠐⡀⢁⠂⠄⠡⠈⠄⠠⠁⢂⠡⠀⠀⠄⠂⠀⠄⠀⣬⣤⡀⠀⠐⡀⠀⠌⡀⠌⢀⠐⡀⠂⠀⠀⡀⠀⠄⡀⠀⠀⠠⠁⠠⢁⠠⠀⠄⠐⠀⠐⢻⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⠃⠀⢀⠂⠄⡐⠀⠂⠌⢀⠡⠈⠄⢁⠂⠠⠁⠀⡀⠄⠀⢀⠂⣿⣟⣷⡀⠠⢀⠀⠀⡐⢀⠂⡐⠠⠐⠀⠀⠀⢁⠂⢀⠀⠐⠀⠀⠀⠂⡐⠈⡀⠀⢈⠀⠈⣿⣿⣿⣿⣿
