@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-Welcome to the ts-ddd-skelton Backend repository! We're glad you're interested in contributing. Before you get started, please take a moment to review the following guidelines.
+Welcome to the ts-skelton Backend repository! We're glad you're interested in contributing. Before you get started, please take a moment to review the following guidelines.
 
 ## Code of Conduct
 
@@ -24,7 +24,7 @@ If you have an idea for an enhancement or new feature, feel free to open an issu
 4. Push your changes to your fork: `git push origin feature/name`.
 5. Submit a pull request (PR) to the dev repository's `dev` branch.
 6. Wait for approval and resolve reviewer suggested corrections.
-5. Submit a pull request (PR) to the prod repository's `prod` branch.
+7. Submit a pull request (PR) to the prod repository's `prod` branch.
 
 Please ensure that your code adheres to the project's coding standards and conventions. Be sure to include relevant tests and documentation with your changes.
 
