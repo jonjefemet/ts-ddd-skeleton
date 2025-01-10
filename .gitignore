@@ -43,6 +43,8 @@ build/Release
 jspm_packages/
 node_modules/
 
+.pnpm-store
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 

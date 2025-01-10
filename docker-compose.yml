@@ -1,0 +1,14 @@
+services:
+
+  backoffice_backend:
+    container_name: ts_ddd_skeleton-backoffice_backend
+    user: "${UID}:${GID}"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8040:8040"
+      - "9040:9001"
+    volumes:
+      - .:/app:delegated
